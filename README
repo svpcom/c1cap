@@ -1,0 +1,18 @@
+c1cap - Captures video from a V4L2 device and compresses it to a h264 bitstream using the S805 hardware codec.
+
+Usage:
+
+	./c1cap | ffmpeg -f h264 -framerate 30 -i - -vcodec copy -f mpegts udp://localhost:9000
+	
+	Captures and writes a h264 bitstream. It capture from V4L2 device that supports
+        YUYV or UYVY surfaces.
+
+	The h264 bitstream output does *not* include framerate information.  This
+	will need to specified in the container when muxing.
+
+	test.cpp illustrates the simplest use of the API taking a two flipping images
+	and converting them to a h264 bitstream.  The images must be in NV12 format.
+	
+	The following command can be used to convert an image to NV12 format:
+		ffmpeg -i image.jpg -pix_fmt nv12 image.yuv
+
