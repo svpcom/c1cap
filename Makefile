@@ -1,4 +1,4 @@
-CODEC_LIB:=../codec_c2
+CODEC_LIB:=../codec_c1
 CXXFLAGS=-O2 -Wall -mfpu=neon -ftree-vectorize -ffast-math -I$(CODEC_LIB)/include
 
 all:  c1cap test

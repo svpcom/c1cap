@@ -9,7 +9,7 @@
 #include <vector>
 #include <cstring>
 
-#include "../codec_c1/vpcodec_1_0.h"
+#include "vpcodec_1_0.h"
 
 
 std::vector<char> read_file(char *name)

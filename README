@@ -2,7 +2,11 @@ c1cap - Captures video from a V4L2 device and compresses it to a h264 bitstream 
 
 Usage:
 
+	To stream via network:
 	./c1cap | ffmpeg -f h264 -framerate 30 -i - -vcodec copy -f mpegts udp://localhost:9000
+
+	To save into local file:
+	./c1cap | ffmpeg -f h264 -framerate 30 -i - -vcodec copy test.avi
 	
 	Captures and writes a h264 bitstream. It capture from V4L2 device that supports
         YUYV or UYVY surfaces.
